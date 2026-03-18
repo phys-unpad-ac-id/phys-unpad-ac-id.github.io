@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="SrTZawFSaLAONuV52vjH13dAEw3zOeO0J7W9G7wwpi8" />
+<title>Fisika UNPAD – Departemen Fisika Universitas Padjadjaran</title>
+			<link rel="icon" href="https://phys.unpad.ac.id/wp-content/uploads/2021/12/cropped-logo-unpad1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://phys.unpad.ac.id/wp-content/uploads/2021/12/cropped-logo-unpad1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://phys.unpad.ac.id/wp-content/uploads/2021/12/cropped-logo-unpad1-180x180.png" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue-dark: #002147;
+    --blue-mid: #003580;
+    --blue-light: #0056b3;
+    --gold: #c8a951;
+    --gold-light: #e2c060;
+    --white: #ffffff;
+    --gray-light: #f4f6f9;
+    --gray-mid: #e0e4ea;
+    --gray-text: #555;
+    --font-main: 'Open Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-main); color: #333; background: #fff; font-size: 14px; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* ===== TOP BAR ===== */
+  .topbar {
+    background: var(--blue-dark);
+    color: #ccc;
+    font-size: 12px;
+    padding: 6px 0;
+  }
+  .topbar .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar .links a {
+    color: #ccc;
+    margin-left: 14px;
+    font-size: 11px;
+    transition: color 0.2s;
+  }
+  .topbar .links a:hover { color: var(--gold); }
+  .topbar .social a {
+    color: #ccc;
+    margin-left: 10px;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .topbar .social a:hover { color: var(--gold); }
+
+  /* ===== HEADER ===== */
+  header {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-area img.logo {
+    height: 60px;
+    width: auto;
+  }
+  .logo-area .site-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .logo-area .site-title span.dept {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--blue-dark);
+    letter-spacing: 0.3px;
+  }
+  .logo-area .site-title span.univ {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--gray-text);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  nav .nav-item {
+    position: relative;
+  }
+  nav .nav-item > a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 26px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    letter-spacing: 0.2px;
+    transition: color 0.2s;
+    border-bottom: 3px solid transparent;
+  }
+  nav .nav-item > a:hover,
+  nav .nav-item > a.active {
+    color: var(--blue-light);
+    border-bottom-color: var(--gold);
+  }
+  nav .nav-item > a i { font-size: 10px; }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 220px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-top: 3px solid var(--gold);
+    z-index: 200;
+  }
+  .nav-item:hover .dropdown { display: block; }
+  .dropdown a {
+    display: block;
+    padding: 10px 18px;
+    font-size: 12.5px;
+    color: #333;
+    border-bottom: 1px solid var(--gray-mid);
+    transition: background 0.15s, color 0.15s;
+  }
+  .dropdown a:last-child { border-bottom: none; }
+  .dropdown a:hover {
+    background: var(--gray-light);
+    color: var(--blue-light);
+    padding-left: 24px;
+  }
+
+  .search-icon {
+    padding: 26px 10px;
+    color: var(--blue-dark);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .search-icon:hover { color: var(--blue-light); }
+
+  /* ===== HERO SLIDER ===== */
+  .hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+  }
+  .slides { display: flex; height: 100%; transition: transform 0.7s ease; }
+  .slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,21,67,0.72) 0%, rgba(0,21,67,0.25) 60%, transparent 100%);
+    display: flex;
+    align-items: center;
+  }
+  .slide-text {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+    color: #fff;
+  }
+  .slide-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    max-width: 540px;
+  }
+  .slide-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    max-width: 460px;
+    opacity: 0.92;
+  }
+  .btn-hero {
+    display: inline-block;
+    padding: 11px 28px;
+    background: var(--gold);
+    color: var(--blue-dark);
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 2px;
+    letter-spacing: 0.4px;
+    transition: background 0.2s;
+  }
+  .btn-hero:hover { background: var(--gold-light); }
+
+  .slider-nav {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .dot.active { background: var(--gold); }
+
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,21,67,0.45);
+    color: #fff;
+    border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .slider-arrow:hover { background: var(--gold); }
+  .arrow-left { left: 16px; }
+  .arrow-right { right: 16px; }
+
+  /* ===== QUICK STATS STRIP ===== */
+  .stats-strip {
+    background: var(--blue-dark);
+    padding: 18px 0;
+  }
+  .stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 10px 20px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-item .num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-item .label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+  }
+
+  /* ===== SECTION WRAPPER ===== */
+  .section { padding: 60px 0; }
+  .section.bg-gray { background: var(--gray-light); }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  .section-header { text-align: center; margin-bottom: 40px; }
+  .section-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 10px;
+  }
+  .section-header .underline {
+    width: 50px; height: 3px;
+    background: var(--gold);
+    margin: 0 auto 14px;
+    border-radius: 2px;
+  }
+  .section-header p {
+    font-size: 14px;
+    color: var(--gray-text);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ===== PROGRAM CARDS ===== */
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .program-card {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border-top: 4px solid var(--blue-mid);
+  }
+  .program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+  }
+  .program-card .card-img {
+    width: 100%; height: 190px;
+    object-fit: cover;
+  }
+  .program-card .card-body { padding: 20px; }
+  .program-card .card-icon {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--blue-dark);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .program-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 8px;
+  }
+  .program-card p {
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .btn-card {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 2px solid var(--blue-mid);
+    color: var(--blue-mid);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-card:hover {
+    background: var(--blue-mid);
+    color: #fff;
+  }
+
+  /* ===== NEWS & ANNOUNCEMENTS ===== */
+  .news-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+
+  /* Featured news */
+  .featured-news { display: flex; flex-direction: column; gap: 20px; }
+  .news-card-big {
+    display: flex;
+    gap: 16px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .news-card-big:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+  .news-card-big img {
+    width: 160px;
+    min-height: 120px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .news-card-big .nc-body {
+    padding: 14px 16px 14px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .news-card-big .nc-tag {
+    display: inline-block;
+    background: var(--blue-mid);
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .news-card-big h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue-dark);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .news-card-big h4:hover { color: var(--blue-light); }
+  .news-card-big .nc-meta {
+    font-size: 11px;
+    color: #999;
+  }
+  .news-card-big p.excerpt {
+    font-size: 12.5px;
+    color: var(--gray-text);
+    line-height: 1.55;
+    margin-top: 6px;
+  }
+
+  /* Sidebar */
+  .sidebar-box {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .sidebar-box .sb-header {
+    background: var(--blue-dark);
+    color: #fff;
+    padding: 12px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sidebar-box .sb-header i { color: var(--gold); }
+  .sb-list { list-style: none; }
+  .sb-list li {
+    border-bottom: 1px solid var(--gray-mid);
+    padding: 12px 18px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    transition: background 0.15s;
+  }
+  .sb-list li:last-child { border-bottom: none; }
+  .sb-list li:hover { background: var(--gray-light); }
+  .sb-list .date-box {
+    min-width: 40px;
+    text-align: center;
+    background: var(--blue-dark);
+    color: #fff;
+    border-radius: 3px;
+    padding: 4px 6px;
+    flex-shrink: 0;
+  }
+  .sb-list .date-box .day { font-size: 18px; font-weight: 700; line-height: 1; }
+  .sb-list .date-box .mon { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gold); }
+  .sb-list .ann-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    line-height: 1.4;
+  }
+  .sb-list .ann-title:hover { color: var(--blue-light); }
+
+  /* ===== RESEARCH AREAS ===== */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .research-card {
+    text-align: center;
+    padding: 28px 16px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    transition: all 0.25s;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+  }
+  .research-card:hover {
+    border-bottom-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .research-card .rc-icon {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+    color: var(--gold);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .research-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 6px;
+  }
+  .research-card p {
+    font-size: 11.5px;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  /* ===== GALLERY ===== */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    gap: 8px;
+  }
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+  }
+  .gallery-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .gallery-item:hover img { transform: scale(1.07); }
+  .gallery-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,21,67,0.45);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+  }
+  .gallery-item:hover .overlay { opacity: 1; }
+
+  /* ===== PARTNER LOGOS ===== */
+  .partners-strip { padding: 40px 0; background: #fff; }
+  .partners-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .partners-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .partner-logo {
+    height: 50px;
+    width: auto;
+    filter: grayscale(1) opacity(0.6);
+    transition: filter 0.2s;
+  }
+  .partner-logo:hover { filter: grayscale(0) opacity(1); }
+
+  /* ===== STAFF HIGHLIGHT ===== */
+  .staff-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .staff-card {
+    text-align: center;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .staff-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .staff-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: top;
+  }
+  .staff-card .sc-body { padding: 16px; }
+  .staff-card h4 { font-size: 13.5px; font-weight: 700; color: var(--blue-dark); margin-bottom: 4px; }
+  .staff-card .title { font-size: 11.5px; color: var(--gray-text); margin-bottom: 10px; }
+  .staff-card .sc-social { display: flex; justify-content: center; gap: 10px; }
+  .staff-card .sc-social a {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--gray-light);
+    color: var(--blue-mid);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .staff-card .sc-social a:hover { background: var(--blue-mid); color: #fff; }
+
+  /* ===== CONTACT STRIP ===== */
+  .contact-strip {
+    background: linear-gradient(120deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+    padding: 50px 0;
+    color: #fff;
+  }
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+  .contact-block h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 10px;
+  }
+  .contact-block p, .contact-block a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.80);
+    line-height: 1.8;
+  }
+  .contact-block a:hover { color: var(--gold); }
+  .contact-block .ci-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  .contact-block .ci-row i {
+    color: var(--gold);
+    font-size: 14px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #001230;
+    color: rgba(255,255,255,0.7);
+    padding: 48px 0 0;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-brand img.fl { height: 55px; margin-bottom: 14px; }
+  .footer-brand p {
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  .footer-social a:hover { background: var(--gold); border-color: var(--gold); color: var(--blue-dark); }
+
+  .footer-col h5 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li {
+    margin-bottom: 9px;
+  }
+  .footer-col ul li a {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.60);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a::before {
+    content: '›';
+    color: var(--gold);
+    font-weight: bold;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    background: #000c1f;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.4);
+  }
+  .footer-bottom a { color: var(--gold); }
+
+  /* ===== BREADCRUMB AREA ===== */
+  .page-banner {
+    background: linear-gradient(100deg, var(--blue-dark) 60%, var(--blue-light) 100%);
+    padding: 22px 0;
+    color: #fff;
+  }
+  .page-banner .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page-banner h1 { font-size: 20px; font-weight: 700; }
+  .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.7); }
+  .breadcrumb a { color: var(--gold); }
+  .breadcrumb a:after { content: ' / '; color: rgba(255,255,255,0.4); margin: 0 4px; }
+
+  /* ===== ACCREDITATION BADGE ===== */
+  .acc-badges {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  .acc-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    padding: 10px 16px;
+    text-align: center;
+  }
+  .acc-badge .grade {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .acc-badge .label {
+    font-size: 9px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 992px) {
+    .programs-grid { grid-template-columns: repeat(2, 1fr); }
+    .research-grid { grid-template-columns: repeat(3, 1fr); }
+    .staff-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .news-layout { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+    .gallery-item:first-child { grid-column: span 1; grid-row: span 1; }
+  }
+  @media (max-width: 768px) {
+    .hero { height: 320px; }
+    .slide-text h2 { font-size: 22px; }
+    nav { display: none; }
+    .programs-grid { grid-template-columns: 1fr; }
+    .research-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="inner">
+    <div class="links">
+      <a href="#">FMIPA UNPAD</a>
+      <a href="#">Universitas Padjadjaran</a>
+      <a href="#">SISTER</a>
+      <a href="#">E-Journal</a>
+      <a href="#">Webmail</a>
+    </div>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-area">
+      <img class="logo" src="https://phys.unpad.ac.id/wp-content/uploads/2021/12/Logo-Fisika-Background-Putih-e1655284747591-1024x320.png" alt="Logo Fisika UNPAD" style="height:54px;width:auto;">
+    </div>
+    <nav>
+      <div class="nav-item">
+        <a href="#" class="active">BERANDA</a>
+      </div>
+      <div class="nav-item">
+        <a href="#">TENTANG <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="#">Sejarah</a>
+          <a href="#">Visi & Misi</a>
+          <a href="#">Struktur Organisasi</a>
+          <a href="#">Fasilitas</a>
+          <a href="#">Kontak</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">PROGRAM <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="#">Sarjana (S1)</a>
+          <a href="#">Magister (S2)</a>
+          <a href="#">Doktoral (S3)</a>
+          <a href="#">Kurikulum</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">RISET <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="#">Kelompok Riset</a>
+          <a href="#">Publikasi</a>
+          <a href="#">Jurnal JIIF</a>
+          <a href="#">Konferensi PIPS</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">AKADEMIK <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown">
+          <a href="#">Kalender Akademik</a>
+          <a href="#">Beasiswa</a>
+          <a href="#">Kemahasiswaan</a>
+          <a href="#">Alumni</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">DOSEN</a>
+      </div>
+      <div class="nav-item">
+        <a href="#">BERITA</a>
+      </div>
+      <div class="search-icon"><i class="fas fa-search"></i></div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO SLIDER -->
+<div class="hero">
+  <div class="slides" id="slides">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=1400&q=80" alt="Physics Lab">
+      <div class="slide-overlay">
+        <div class="slide-text">
+          <h2>Discoveries in Physics Research</h2>
+          <p>From quarks to twistronics to dark matter, Physics Unpad is on the cutting edge of physics research.</p>
+          <a href="#" class="btn-hero">Jelajahi Riset Kami</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1400&q=80" alt="Physics Instruments">
+      <div class="slide-overlay">
+        <div class="slide-text">
+          <h2>Program Studi Unggul Tingkat Internasional</h2>
+          <p>Berfokus pada Instrumentasi, Material, Energi, Geofisika, dan Biofisika untuk masa depan Indonesia.</p>
+          <a href="#" class="btn-hero">Lihat Program Studi</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1400&q=80" alt="Campus">
+      <div class="slide-overlay">
+        <div class="slide-text">
+          <h2>Kampus Jatinangor, Warisan Ilmu Pengetahuan</h2>
+          <p>Berdiri sejak 1957 bersama Universitas Padjadjaran, mendidik generasi saintis terbaik Indonesia.</p>
+          <a href="#" class="btn-hero">Tentang Departemen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="slider-arrow arrow-left" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+  <button class="slider-arrow arrow-right" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+  <div class="slider-nav">
+    <div class="dot active" onclick="goTo(0)"></div>
+    <div class="dot" onclick="goTo(1)"></div>
+    <div class="dot" onclick="goTo(2)"></div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="num">21+</div>
+      <div class="label">Dosen Tetap</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">5</div>
+      <div class="label">Profesor</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">3</div>
+      <div class="label">Program Studi</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">A</div>
+      <div class="label">Akreditasi BAN-PT</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<div class="section bg-gray">
+  <div class="container">
+    <div class="section-header">
+      <h2>Program Studi</h2>
+      <div class="underline"></div>
+      <p>Departemen Fisika FMIPA Unpad menyelenggarakan tiga jenjang program studi yang terakreditasi dan berstandar internasional.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80" alt="Sarjana">
+        <div class="card-body">
+          <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Program Sarjana (S1)</h3>
+          <p>Mendidik mahasiswa menguasai konsep dasar fisika dan terapannya dalam bidang Energi, Kesehatan, dan Lingkungan. Akreditasi A oleh BAN-PT.</p>
+          <a href="#" class="btn-card">Selengkapnya</a>
+        </div>
+      </div>
+      <div class="program-card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&q=80" alt="Magister">
+        <div class="card-body">
+          <div class="card-icon"><i class="fas fa-microscope"></i></div>
+          <h3>Program Magister (S2)</h3>
+          <p>Program unggulan bertaraf internasional yang berfokus pada Instrumentasi, Material, Energi, dan Geofisika. Berdampak bagi masyarakat luas.</p>
+          <a href="#" class="btn-card">Selengkapnya</a>
+        </div>
+      </div>
+      <div class="program-card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80" alt="Doktoral">
+        <div class="card-body">
+          <div class="card-icon"><i class="fas fa-atom"></i></div>
+          <h3>Program Doktoral (S3)</h3>
+          <p>Jenjang tertinggi bagi peneliti fisika yang ingin berkontribusi pada pengembangan ilmu pengetahuan di tingkat global bersama para profesor terbaik.</p>
+          <a href="#" class="btn-card">Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS & ANNOUNCEMENTS -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Berita & Pengumuman</h2>
+      <div class="underline"></div>
+      <p>Ikuti perkembangan terbaru dari Departemen Fisika Universitas Padjadjaran.</p>
+    </div>
+    <div class="news-layout">
+      <!-- Main News -->
+      <div class="featured-news">
+        <div class="news-card-big">
+          <img src="https://images.unsplash.com/photo-1636819488537-a9b1ffb315ce?w=400&q=80" alt="News 1">
+          <div class="nc-body">
+            <span class="nc-tag">BERITA</span>
+            <h4><a href="#">Rektor Unpad Resmikan Wisuda Sarjana dan Magister Fisika Secara Luring</a></h4>
+            <div class="nc-meta"><i class="far fa-calendar"></i> 10 November 2022 &nbsp;|&nbsp; Admin Fisika</div>
+            <p class="excerpt">Rektor Universitas Padjadjaran secara resmi meluluskan para wisudawan Program Sarjana dan Magister Fisika secara luring pada Kamis, 10 November 2022 yang disambut dengan suka cita.</p>
+          </div>
+        </div>
+        <div class="news-card-big">
+          <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400&q=80" alt="News 2">
+          <div class="nc-body">
+            <span class="nc-tag">RISET</span>
+            <h4><a href="#">Tim Peneliti Fisika Unpad Raih Hibah Riset Nasional Bidang Material Baru</a></h4>
+            <div class="nc-meta"><i class="far fa-calendar"></i> 5 Oktober 2022 &nbsp;|&nbsp; Admin Fisika</div>
+            <p class="excerpt">Kelompok Bidang Keahlian Fisika Material Departemen Fisika Unpad berhasil meraih hibah penelitian nasional dari BRIN untuk mengembangkan material nano-komposit berperforma tinggi.</p>
+          </div>
+        </div>
+        <div class="news-card-big">
+          <img src="https://images.unsplash.com/photo-1564979045531-fa386a275b27?w=400&q=80" alt="News 3">
+          <div class="nc-body">
+            <span class="nc-tag">AKADEMIK</span>
+            <h4><a href="#">Padjadjaran International Physics Symposium (PIPS) 2022 Resmi Dibuka</a></h4>
+            <div class="nc-meta"><i class="far fa-calendar"></i> 12 September 2022 &nbsp;|&nbsp; Admin Fisika</div>
+            <p class="excerpt">PIPS 2022 diselenggarakan oleh Departemen Fisika FMIPA Unpad sebagai ajang komunikasi antara peneliti fisika internasional yang berfokus pada peran fisika dalam pembangunan berkelanjutan.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div>
+        <div class="sidebar-box" style="margin-bottom:20px;">
+          <div class="sb-header"><i class="fas fa-bullhorn"></i> Pengumuman</div>
+          <ul class="sb-list">
+            <li>
+              <div class="date-box"><div class="day">18</div><div class="mon">Mar</div></div>
+              <a href="#" class="ann-title">Pendaftaran Ujian Skripsi Semester Genap 2023/2024</a>
+            </li>
+            <li>
+              <div class="date-box"><div class="day">12</div><div class="mon">Mar</div></div>
+              <a href="#" class="ann-title">Jadwal Kuliah Umum Fisika Komputasi 2024</a>
+            </li>
+            <li>
+              <div class="date-box"><div class="day">5</div><div class="mon">Mar</div></div>
+              <a href="#" class="ann-title">Penerimaan Mahasiswa Baru Magister Fisika 2024</a>
+            </li>
+            <li>
+              <div class="date-box"><div class="day">25</div><div class="mon">Feb</div></div>
+              <a href="#" class="ann-title">Workshop Instrumentasi & Pengukuran Fisika</a>
+            </li>
+            <li>
+              <div class="date-box"><div class="day">18</div><div class="mon">Feb</div></div>
+              <a href="#" class="ann-title">Seminar Nasional FMIPA – Inovasi Sains untuk Negeri</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-box">
+          <div class="sb-header"><i class="fas fa-calendar-alt"></i> Agenda</div>
+          <ul class="sb-list">
+            <li>
+              <div class="date-box"><div class="day">22</div><div class="mon">Mar</div></div>
+              <a href="#" class="ann-title">Kuliah Tamu: Fisika Energi Terbarukan</a>
+            </li>
+            <li>
+              <div class="date-box"><div class="day">28</div><div class="mon">Mar</div></div>
+              <a href="#" class="ann-title">Seminar Hasil Penelitian Mahasiswa Pascasarjana</a>
+            </li>
+            <li>
+              <div class="date-box"><div class="day">10</div><div class="mon">Apr</div></div>
+              <a href="#" class="ann-title">Open Lab: Hari Terbuka Laboratorium Fisika</a>
+            </li>
+            <li>
+              <div class="date-box"><div class="day">25</div><div class="mon">Apr</div></div>
+              <a href="#" class="ann-title">Colloquium Series: Advances in Geophysics</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH AREAS -->
+<div class="section bg-gray">
+  <div class="container">
+    <div class="section-header">
+      <h2>Kelompok Bidang Keahlian (KBK)</h2>
+      <div class="underline"></div>
+      <p>Departemen Fisika Unpad diakui sebagai pemimpin dalam riset fisika. Jelajahi area penelitian unggulan kami.</p>
+    </div>
+    <div class="research-grid">
+      <div class="research-card">
+        <div class="rc-icon"><i class="fas fa-microchip"></i></div>
+        <h4>Instrumentasi</h4>
+        <p>Pengembangan alat ukur dan sensor canggih untuk berbagai aplikasi teknologi.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-icon"><i class="fas fa-layer-group"></i></div>
+        <h4>Fisika Material</h4>
+        <p>Penelitian sifat dan aplikasi material baru termasuk nanomaterial dan semikonduktor.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-icon"><i class="fas fa-globe-asia"></i></div>
+        <h4>Geofisika</h4>
+        <p>Eksplorasi bumi menggunakan metode fisika untuk pemahaman struktur dan dinamika bumi.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-icon"><i class="fas fa-bolt"></i></div>
+        <h4>Fisika Energi</h4>
+        <p>Pengembangan solusi energi terbarukan dan efisiensi energi untuk masa depan berkelanjutan.</p>
+      </div>
+      <div class="research-card">
+        <div class="rc-icon"><i class="fas fa-heartbeat"></i></div>
+        <h4>Biofisika</h4>
+        <p>Penerapan prinsip fisika dalam memahami sistem biologis dan pengembangan teknologi kesehatan.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Galeri Kampus & Kegiatan</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80" alt="Lab">
+        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=600&q=80" alt="Campus">
+        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1568034694218-3c5cebf56460?w=600&q=80" alt="Research">
+        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80" alt="Seminar">
+        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80" alt="Students">
+        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<div class="partners-strip">
+  <div class="container">
+    <p class="partners-label">Mitra & Kolaborasi</p>
+    <div class="partners-logos">
+      <img class="partner-logo" src="https://phys.unpad.ac.id/wp-content/uploads/2021/12/Logo-Fisika-Background-Putih-e1655284747591-1024x320.png" alt="Fisika UNPAD">
+      <img class="partner-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/BRIN_Logo_2021.svg/320px-BRIN_Logo_2021.svg.png" alt="BRIN">
+      <img class="partner-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Kemdikbud_logo.svg/320px-Kemdikbud_logo.svg.png" alt="Kemdikbud">
+      <img class="partner-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/ITB-Logo-1.png/320px-ITB-Logo-1.png" alt="ITB">
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="contact-inner">
+    <div class="contact-block">
+      <h4><i class="fas fa-map-marker-alt" style="margin-right:6px;"></i>Alamat</h4>
+      <div class="ci-row"><i class="fas fa-building"></i><p>Departemen Fisika, Fakultas MIPA<br>Universitas Padjadjaran<br>Jl. Raya Bandung-Sumedang KM 21<br>Jatinangor, Sumedang 45363<br>Jawa Barat, Indonesia</p></div>
+      <div class="acc-badges">
+        <div class="acc-badge"><div class="grade">A</div><div class="label">Akreditasi S1</div></div>
+        <div class="acc-badge"><div class="grade">B</div><div class="label">Akreditasi S2</div></div>
+      </div>
+    </div>
+    <div class="contact-block">
+      <h4><i class="fas fa-phone" style="margin-right:6px;"></i>Kontak</h4>
+      <div class="ci-row"><i class="fas fa-phone-alt"></i><p>+62 22 7796014</p></div>
+      <div class="ci-row"><i class="fas fa-fax"></i><p>+62 22 7796014</p></div>
+      <div class="ci-row"><i class="fas fa-envelope"></i><a href="/cdn-cgi/l/email-protection#b6d0dfc5dfddd7f6c3d8c6d7d298d7d598dfd2"><span class="__cf_email__" data-cfemail="bed8d7cdd7d5dffecbd0cedfda90dfdd90d7da">[email&#160;protected]</span></a></div>
+      <div class="ci-row"><i class="fas fa-globe"></i><a href="https://phys.unpad.ac.id" target="_blank">phys.unpad.ac.id</a></div>
+    </div>
+    <div class="contact-block">
+      <h4><i class="fas fa-clock" style="margin-right:6px;"></i>Jam Layanan</h4>
+      <div class="ci-row"><i class="fas fa-calendar-day"></i><p>Senin – Jumat<br>08.00 – 16.00 WIB</p></div>
+      <div class="ci-row"><i class="fas fa-calendar-times"></i><p>Sabtu, Minggu & Hari Libur<br>Tutup</p></div>
+      <br>
+      <div class="ci-row"><i class="fab fa-instagram"></i><a href="#">@fisika_unpad</a></div>
+      <div class="ci-row"><i class="fab fa-youtube"></i><a href="#">Fisika UNPAD Official</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img class="fl" src="https://phys.unpad.ac.id/wp-content/uploads/2021/12/Logo-Fisika-Background-Putih-e1655284747591-1024x320.png" alt="Logo Fisika UNPAD" style="height:48px;width:auto;">
+      <p>Departemen Fisika FMIPA Universitas Padjadjaran berkomitmen menghasilkan lulusan berkualitas internasional yang berdampak bagi masyarakat Indonesia dan dunia melalui pendidikan, penelitian, dan pengabdian.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Tautan Cepat</h5>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Tentang Departemen</a></li>
+        <li><a href="#">Program Sarjana</a></li>
+        <li><a href="#">Program Magister</a></li>
+        <li><a href="#">Program Doktoral</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Akademik</h5>
+      <ul>
+        <li><a href="#">Kalender Akademik</a></li>
+        <li><a href="#">Kurikulum</a></li>
+        <li><a href="#">Beasiswa</a></li>
+        <li><a href="#">Kemahasiswaan</a></li>
+        <li><a href="#">Alumni</a></li>
+        <li><a href="#">Jurnal JIIF</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Layanan</h5>
+      <ul>
+        <li><a href="#">SISTER Unpad</a></li>
+        <li><a href="#">Webmail</a></li>
+        <li><a href="#">E-Learning</a></li>
+        <li><a href="#">Perpustakaan</a></li>
+        <li><a href="#">Laboratorium</a></li>
+        <li><a href="#">FMIPA Unpad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2024 Departemen Fisika FMIPA Universitas Padjadjaran. All Rights Reserved. | Designed by <a href="#">Fisika UNPAD Web Team</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  let current = 0;
+  const slides = document.getElementById('slides');
+  const dots = document.querySelectorAll('.dot');
+  const total = 3;
+  let timer;
+
+  function goTo(n) {
+    current = (n + total) % total;
+    slides.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+  function changeSlide(dir) 
